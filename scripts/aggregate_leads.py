@@ -86,6 +86,36 @@ def main() -> int:
                         continue
                     verified[cid] = {"src_batch": os.path.basename(vf), **row}
 
+    # Also pull Round 2 harvest-and-verify outputs (different schema)
+    r2_path = os.path.join(CANDIDATES_DIR, "round-2-verified.csv")
+    if os.path.exists(r2_path):
+        with open(r2_path, newline="", encoding="utf-8") as fh:
+            for row in csv.DictReader(fh):
+                v = (row.get("verdict") or "").strip().upper()
+                if v in ("VERIFIED", "PASS", "PARTIAL_PASS"):
+                    cid = row["candidate_id"].strip()
+                    if cid in verified:
+                        print(f"WARN: duplicate Round 2 VERIFIED for {cid}", file=sys.stderr)
+                        continue
+                    verified[cid] = {
+                        "src_batch": "round-2-verified.csv",
+                        "candidate_id": cid,
+                        "name": row.get("name", ""),
+                        "firm": row.get("firm", ""),
+                        "verdict": "VERIFIED",
+                        "firm_size_estimate": row.get("firm_size_estimate", ""),
+                        "city": row.get("city", ""),
+                        "state": row.get("state", ""),
+                        "linkedin_url": row.get("linkedin_url", ""),
+                        "firm_website": row.get("firm_website", ""),
+                        "notes": row.get("notes", ""),
+                        "_r2_fiduciary": row.get("gate2_fiduciary_signal", ""),
+                        "_r2_self_funded": row.get("gate4_self_funded_evidence", ""),
+                        "_r2_broker_identity": row.get("gate0_broker_identity", ""),
+                        "_r2_warmth": row.get("warmth_score", ""),
+                        "_r2_intro": row.get("intro_path", ""),
+                    }
+
     # Drop intra-deliverable dupes (same person, different cIDs) — known list:
     # c032 was consolidated into c017 by the verifier; c042 dup of c002 (Contorno); etc.
     known_dupe_drops = {
@@ -148,7 +178,19 @@ def main() -> int:
             del verified[k]
 
     rows_out: list[dict] = []
-    for i, (cid, row) in enumerate(sorted(verified.items(), key=lambda kv: int(kv[0].lstrip("c")))):
+    def sort_key(kv: tuple) -> tuple:
+        cid = kv[0]
+        # Order: c-prefix candidates first (by numeric), then b/n/p/r (Round 2 sources)
+        prefix = cid[0]
+        try:
+            num = int("".join(ch for ch in cid if ch.isdigit()))
+        except ValueError:
+            num = 9999
+        # priority order: c, b, n, p, r
+        prefix_rank = {"c": 0, "b": 1, "n": 2, "p": 3, "r": 4}.get(prefix, 9)
+        return (prefix_rank, num)
+
+    for i, (cid, row) in enumerate(sorted(verified.items(), key=sort_key)):
         lead_id = f"L{i+1:02d}"
         ev_path = os.path.join(EVIDENCE_DIR, f"{cid}.md")
         ev_text = ""
