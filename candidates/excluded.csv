@@ -1,0 +1,19 @@
+name,firm,source_url,source_type,exclusion_reason
+Colton Storla,North Risk Partners,https://fmma.org/membership/chapters/,fmma_directory,top-national-broker:north risk
+Mike Kroupa,Connor & Gallagher One Source,https://directory.healthrosetta.org/directory/michael_kroupa,health_rosetta_directory,top-national-broker:gallagher
+Dawn Mazzola,Kapnick Insurance,https://directory.healthrosetta.org/directory/dawn_mazzola,health_rosetta_directory,top-national-broker:kapnick
+Steve Miller,Kapnick Insurance,https://directory.healthrosetta.org/directory/steven_miller,health_rosetta_directory,top-national-broker:kapnick
+James Nelson,Imagine Benefits Consulting,https://directory.healthrosetta.org/directory/james_nelson,health_rosetta_directory,top-national-broker:ima
+Steve Parsons,Parsons Risk Strategies,https://directory.healthrosetta.org/directory/steven_parsons,health_rosetta_directory,top-national-broker:risk strategies
+Tommy Taylor,Higginbotham Insurance Agency,https://directory.healthrosetta.org/directory/tommy_taylor,health_rosetta_directory,top-national-broker:higginbotham
+Brent Tregaskes,Optimal Benefits Professionals,https://directory.healthrosetta.org/directory/brent_tregaskes,health_rosetta_directory,top-national-broker:ima
+Tori Turner,Higginbotham Insurance Agency,https://directory.healthrosetta.org/directory/tori_turner,health_rosetta_directory,top-national-broker:higginbotham
+Renee Wenzler,Higginbotham Insurance Agency,https://directory.healthrosetta.org/directory/renee_wenzler,health_rosetta_directory,top-national-broker:higginbotham
+Julie Wilson,IMA,https://directory.healthrosetta.org/directory/julia_wilson,health_rosetta_directory,top-national-broker:ima
+Tom Davidson,Health Rosetta benefits advisor,https://www.linkedin.com/in/tomdavidson3/,linkedin_keyword_search,exclusion-list:firm-substr:health rosetta
+Adam Zebian,Independent Health Rosetta certified advisor,https://healthrosetta.org/people/adam-zebian/,linkedin_keyword_search,exclusion-list:firm-substr:health rosetta
+Katy Talento,Independent Health Rosetta certified advisor,https://healthrosetta.org/advisors/katy-talento/,linkedin_keyword_search,exclusion-list:firm-substr:health rosetta
+Corey Koskie,Health Rosetta Advisor,https://www.linkedin.com/in/corey-koskie-2a4b0024/,linkedin_keyword_search,exclusion-list:firm-substr:health rosetta
+Marshall Allen,Allen Health Academy / Marshall Allen Project,https://www.allenhealthacademy.com/cpc-nabipmembers,linkedin_keyword_search,top-national-broker:marsh
+Terry Shook,Primum Risk Strategies,https://validationinstitute.com/fiduciary/,validation_institute,top-national-broker:risk strategies
+David Smith,Risk Strategies,https://validationinstitute.com/fiduciary/,validation_institute,top-national-broker:risk strategies
