@@ -98,6 +98,23 @@ def main() -> int:
         # Phase 5 QA OVERTURNED — Health Rosetta listing tier unverifiable,
         # firm site has no fiduciary/self-funded language on fresh fetch.
         "c073",  # Rhett Bray / BeaconPath
+        # User kills (already in contact, or not a brokerage)
+        # See candidates/user-kills.csv for full audit trail.
+        "c001",  # Josh Butler — already known
+        "c002",  # David Contorno — already known
+        "c003",  # Bryce Heinbaugh — already known
+        "c004",  # Adam Berkowitz — already known
+        "c005",  # Cristy Gupton — already known
+        "c006",  # Kelly Fristoe — already known
+        "c009",  # Chelsea Ryckis — already known
+        "c012",  # Donovan Ryckis — already known
+        "c016",  # Alex Dampf — already known
+        "c017",  # Carl Schuessler Jr — already known
+        "c019",  # Matt Bittner — already known
+        "c034",  # Donovan Pyle — already known
+        "c053",  # Kalli Ortega — already known
+        "c209",  # Lester Morales — already known
+        "c217",  # Emma Fox — already known (also: not really a brokerage)
     }
     for k in list(verified.keys()):
         if k in known_dupe_drops:
