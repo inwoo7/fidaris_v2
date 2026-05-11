@@ -115,6 +115,32 @@ def main() -> int:
         "c053",  # Kalli Ortega — already known
         "c209",  # Lester Morales — already known
         "c217",  # Emma Fox — already known (also: not really a brokerage)
+        # Auto-kills derived from user pattern (non-brokerages, employees of
+        # killed firms, top-100 subs, ecosystem connectors user knows)
+        "c179",  # Jude Odu / Health Cost IQ — claims-audit platform
+        "c185",  # Jamie Greenleaf / Fiduciary In A Box — governance SaaS
+        "c186",  # Patrick Williams / Fiduciary In A Box — governance SaaS
+        "c184",  # Sally Pace / Connect Healthcare Collaboration — advocacy
+        "c195",  # Sandra Wood / The Benefits Academy — training
+        "c233",  # Marshall Allen / Allen Health Academy — deceased journalist
+        "c200",  # Stephanie Summers / SW Health Advocates — advocacy
+        "c225",  # Peter Moskowitz / Decision Associates Int'l — mgmt consulting
+        "c107",  # Ricki Hancart / Conner Insurance — employee of killed firm
+        "c159",  # Guy Vahle / Conner Insurance — same
+        "c121",  # Brian Kauffman / IEN — employee of killed firm
+        "c154",  # Frank Stichter / IEN — same
+        "c191",  # John Otto / Leavitt — top-100 subsidiary
+        "c144",  # Jennifer Pender / Oakbridge — top-100 subsidiary
+        "c141",  # Jared Mongold / IOA — top-100 subsidiary
+        "c064",  # Brian Bellware / Gibson — top-100 subsidiary
+        "c124",  # Ray Korson / Gibson — top-100 subsidiary
+        "c166",  # John Woodworth / LD&B — top-100 regional
+        "c169",  # Jonathan Coddington / LD&B — same
+        "c150",  # Pete Scruggs / Golsan Scruggs — P&C primarily
+        "c199",  # Matt Ohrt / FMMA author — ecosystem connector (user knows)
+        "c201",  # Andrea Flynn / Blue Horizon — Alkeme-acquired
+        "c202",  # Chris Morin / Blue Horizon — same
+        "c203",  # Brent Watkins / Pancoast — sibling of c181 dampf-killed firm
     }
     for k in list(verified.keys()):
         if k in known_dupe_drops:
