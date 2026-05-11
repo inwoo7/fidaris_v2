@@ -95,6 +95,9 @@ def main() -> int:
         "c046",  # Griswold (kept c041 — both REJECT anyway)
         "c051",  # Tom DiLiegro (kept c044)
         "c066",  # Louis Bernardi (kept c033)
+        # Phase 5 QA OVERTURNED — Health Rosetta listing tier unverifiable,
+        # firm site has no fiduciary/self-funded language on fresh fetch.
+        "c073",  # Rhett Bray / BeaconPath
     }
     for k in list(verified.keys()):
         if k in known_dupe_drops:
